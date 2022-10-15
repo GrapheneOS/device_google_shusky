@@ -84,8 +84,3 @@ on property:vendor.all.modules.ready=1
 
     enable vendor.vibrator.cs40l26
 
-# For Japan sku, always enforce camera shutter sound
-# Since this property is read by the audio server in system service,
-# it should be written by the system init.
-on property:ro.boot.hardware.sku=GE9DP
-    setprop audio.camerasound.force true
