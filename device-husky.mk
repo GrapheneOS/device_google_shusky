@@ -23,11 +23,15 @@ $(call inherit-product-if-exists, vendor/google_devices/zuma/proprietary/device-
 $(call inherit-product-if-exists, vendor/google_devices/shusky/proprietary/husky/device-vendor-husky.mk)
 $(call inherit-product-if-exists, vendor/qorvo/uwb/qm35-hal/Device.mk)
 
+# display
+DEVICE_PACKAGE_OVERLAYS += device/google/shusky/husky/overlay
+
 include device/google/shusky/audio/husky/audio-tables.mk
 include device/google/zuma/device-shipping-common.mk
 include device/google/shusky/vibrator/cs40l26/device-shusky.mk
 include device/google/gs-common/bcmbt/bluetooth.mk
 include device/google/gs-common/touch/stm/stm20.mk
+include device/google/gs-common/wireless_charger/wireless_charger.mk
 
 # go/lyric-soong-variables
 $(call soong_config_set,lyric,camera_hardware,husky)
@@ -225,9 +229,6 @@ endif
 PRODUCT_VENDOR_PROPERTIES += \
     persist.vendor.udfps.als_feed_forward_supported=true \
     persist.vendor.udfps.lhbm_controlled_in_hal_supported=true
-
-# display
-DEVICE_PACKAGE_OVERLAYS += device/google/shusky/husky/overlay
 
 # config of display brightness dimming
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += vendor.display.0.brightness.dimming.usage?=1
