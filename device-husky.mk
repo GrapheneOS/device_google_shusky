@@ -31,6 +31,7 @@ include device/google/zuma/device-shipping-common.mk
 include device/google/shusky/vibrator/cs40l26/device-shusky.mk
 include device/google/gs-common/bcmbt/bluetooth.mk
 include device/google/gs-common/touch/stm/stm20.mk
+include device/google/gs-common/touch/gti/gti.mk
 include device/google/gs-common/wireless_charger/wireless_charger.mk
 
 # go/lyric-soong-variables
@@ -148,6 +149,15 @@ PRODUCT_PRODUCT_PROPERTIES += \
 	bluetooth.profile.mcp.server.enabled=true \
 	bluetooth.profile.ccp.server.enabled=true \
 	bluetooth.profile.vcp.controller.enabled=true
+
+# Bluetooth LE Audio enable hardware offloading
+PRODUCT_PRODUCT_PROPERTIES += \
+	ro.bluetooth.leaudio_offload.supported=true \
+	persist.bluetooth.leaudio_offload.disabled=false
+
+# Bluetooth LE Auido offload capabilities setting
+PRODUCT_COPY_FILES += \
+	device/google/shusky/bluetooth/le_audio_codec_capabilities.xml:$(TARGET_COPY_OUT_VENDOR)/etc/le_audio_codec_capabilities.xml
 
 # Support One-Handed mode
 PRODUCT_PRODUCT_PROPERTIES += \
