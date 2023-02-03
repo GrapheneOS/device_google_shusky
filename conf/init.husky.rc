@@ -25,7 +25,6 @@ on property:vendor.mfgapi.touchpanel.permission=1
 
 # Fingerprint
 on property:ro.vendor.trusty.storage.fs_ready=1
-    chown system system /dev/goodix_fp
     exec_background - system shell -- /vendor/bin/trusty_apploader /vendor/firmware/g7.app
 
 # Overrides fingerprint antispoof if following persist sysprops are set
@@ -56,3 +55,11 @@ on post-fs-data
 # Start the twoshay touch service
 on property:vendor.device.modules.ready=1
     start twoshay
+
+
+# Toggle high_sensitivity according to touch_sensitivity_mode
+on property:persist.vendor.touch_sensitivity_mode=0 && property:sys.boot_completed=1
+    write /sys/devices/virtual/goog_touch_interface/gti.0/screen_protector_mode_enabled 0
+
+on property:persist.vendor.touch_sensitivity_mode=1 && property:sys.boot_completed=1
+    write /sys/devices/virtual/goog_touch_interface/gti.0/screen_protector_mode_enabled 1
