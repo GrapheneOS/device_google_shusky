@@ -134,6 +134,13 @@
     <integer name="config_autoBrightnessBrighteningLightDebounce">1000</integer>
     <integer name="config_autoBrightnessDarkeningLightDebounce">4000</integer>
 
+    <!-- The default refresh rate. We manage this using the peak refresh rate setting. Set this
+         value to 0 so it has no effect. -->
+    <integer name="config_defaultRefreshRate">0</integer>
+
+    <!-- The default peak refresh rate. -->
+    <integer name="config_defaultPeakRefreshRate">120</integer>
+
 <integer-array name="config_ambientThresholdLevels">
     <item>2</item>
     <item>3</item>
@@ -269,4 +276,9 @@
 
     <!-- Type of the udfps long press sensor. Empty if long press is not supported. -->
     <string name="config_dozeUdfpsLongPressSensorType" translatable="false">com.google.sensor.long_press</string>
+
+    <!-- MMS user agent string -->
+    <string name="config_mms_user_agent" translatable="false">g1mnw</string>
+    <!-- MMS user agent profile url -->
+    <string name="config_mms_user_agent_profile_url" translatable="false">http://www.gstatic.com/android/sms/G1MNW.xml</string>
 </resources>
