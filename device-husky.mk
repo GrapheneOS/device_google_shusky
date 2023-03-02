@@ -151,12 +151,15 @@ PRODUCT_PRODUCT_PROPERTIES += \
 	bluetooth.profile.hap.client.enabled=true \
 	bluetooth.profile.mcp.server.enabled=true \
 	bluetooth.profile.ccp.server.enabled=true \
-	bluetooth.profile.vcp.controller.enabled=true
+	bluetooth.profile.vcp.controller.enabled=true \
+	bluetooth.profile.bap.broadcast.assist.enabled=true \
+	bluetooth.profile.bap.broadcast.source.enabled=true
 
 # Bluetooth LE Audio enable hardware offloading
 PRODUCT_PRODUCT_PROPERTIES += \
 	ro.bluetooth.leaudio_offload.supported=true \
-	persist.bluetooth.leaudio_offload.disabled=false
+	persist.bluetooth.leaudio_offload.disabled=false \
+	ro.bluetooth.leaudio_broadcast_switcher.supported=true
 
 # Bluetooth LE Auido offload capabilities setting
 PRODUCT_COPY_FILES += \
@@ -246,6 +249,10 @@ PRODUCT_VENDOR_PROPERTIES += \
 
 # config of display brightness dimming
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += vendor.display.0.brightness.dimming.usage?=1
+PRODUCT_VENDOR_PROPERTIES += \
+    vendor.primarydisplay.op.hs_hz=120 \
+    vendor.primarydisplay.op.ns_hz=60 \
+    vendor.primarydisplay.op.ns_min_dbv=1172
 
 # kernel idle timer for display driver
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.surface_flinger.support_kernel_idle_timer=true
