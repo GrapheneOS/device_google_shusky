@@ -4,7 +4,7 @@
       "Name": "MemFreq",
       "Path": "/sys/devices/platform/17000010.devfreq_mif/devfreq/17000010.devfreq_mif/min_freq",
       "Values": [
-        "3172000",
+        "3744000",
         "1716000",
         "1352000",
         "1014000",
@@ -18,6 +18,28 @@
       "Values": [
         "533000",
         "100000"
+      ],
+      "ResetOnInit": true
+    },
+    {
+      "Name": "DsuFreq",
+      "Path": "/sys/devices/platform/17000090.devfreq_dsu/devfreq/17000090.devfreq_dsu/min_freq",
+      "Values": [
+        "2150000",
+        "1328000",
+        "820000",
+        "324000"
+      ],
+      "ResetOnInit": true
+    },
+    {
+      "Name": "BCIFreq",
+      "Path": "/sys/devices/platform/170000a0.devfreq_bci/devfreq/170000a0.devfreq_bci/min_freq",
+      "Values": [
+        "1850000",
+        "1205000",
+        "840000",
+        "315000"
       ],
       "ResetOnInit": true
     },
@@ -671,7 +693,7 @@
       "PowerHint": "LAUNCH",
       "Node": "MemFreq",
       "Duration": 5000,
-      "Value": "3172000"
+      "Value": "3744000"
     },
     {
       "PowerHint": "LAUNCH",
@@ -721,10 +743,16 @@
       "Value": "1014000"
     },
     {
+      "PowerHint": "CPU_LOAD_RESET",
+      "Node": "DsuFreq",
+      "Duration": 33,
+      "Value": "820000"
+    },
+    {
       "PowerHint": "CAMERA_LAUNCH",
       "Node": "MemFreq",
       "Duration": 1000,
-      "Value": "3172000"
+      "Value": "3744000"
     },
     {
       "PowerHint": "CAMERA_LAUNCH",
@@ -868,7 +896,7 @@
       "PowerHint": "CAMERA_SHOT",
       "Node": "MemFreq",
       "Duration": 300,
-      "Value": "3172000"
+      "Value": "3744000"
     },
     {
       "PowerHint": "CAMERA_SHOT",
@@ -898,7 +926,7 @@
       "PowerHint": "CAMERA_BACKEND_BOOST",
       "Node": "MemFreq",
       "Duration": 1000,
-      "Value": "3172000"
+      "Value": "3744000"
     },
     {
       "PowerHint": "CAMERA_BACKEND_BOOST",
@@ -1599,7 +1627,7 @@
       "Value": "0"
     },
     {
-      "PowerHint": "REFRESH_90FPS",
+      "PowerHint": "REFRESH_120FPS",
       "Node": "TAUClampBoost",
       "Duration": 0,
       "Value": "1"
