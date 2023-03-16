@@ -135,7 +135,8 @@
         "521000",
         "467000",
         "376000",
-        "302000"
+        "302000",
+        "150000"
       ],
       "ResetOnInit": true
     },
@@ -735,6 +736,18 @@
       "Node": "PMU_POLL",
       "Duration": 3000,
       "Value": "0"
+    },
+    {
+      "PowerHint": "CPU_LOAD_RESET",
+      "Node": "MemFreq",
+      "Duration": 33,
+      "Value": "1014000"
+    },
+    {
+      "PowerHint": "CPU_LOAD_RESET",
+      "Node": "DsuFreq",
+      "Duration": 33,
+      "Value": "820000"
     },
     {
       "PowerHint": "CAMERA_LAUNCH",
