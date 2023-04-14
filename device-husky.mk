@@ -41,6 +41,7 @@ include device/google/gs-common/bcmbt/bluetooth.mk
 include device/google/gs-common/touch/stm/stm20.mk
 include device/google/gs-common/touch/gti/gti.mk
 
+
 # go/lyric-soong-variables
 $(call soong_config_set,lyric,camera_hardware,husky)
 $(call soong_config_set,lyric,tuning_product,husky)
