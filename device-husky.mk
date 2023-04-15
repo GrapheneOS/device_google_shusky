@@ -75,15 +75,12 @@ PRODUCT_PACKAGES += \
 
 # SecureElement
 PRODUCT_PACKAGES += \
-	android.hardware.secure_element@1.2-service-gto
+	android.hardware.secure_element-service.thales
 
 PRODUCT_COPY_FILES += \
 	frameworks/native/data/etc/android.hardware.se.omapi.ese.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.se.omapi.ese.xml \
 	frameworks/native/data/etc/android.hardware.se.omapi.uicc.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.se.omapi.uicc.xml \
 	device/google/shusky/nfc/libse-gto-hal.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libse-gto-hal.conf
-
-DEVICE_MANIFEST_FILE += \
-	device/google/shusky/nfc/manifest_se.xml
 
 # Thermal Config
 PRODUCT_COPY_FILES += \
@@ -137,10 +134,14 @@ PRODUCT_PRODUCT_PROPERTIES += \
 # Override BQR mask to enable LE Audio Choppy report, remove BTRT logging
 ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
 PRODUCT_PRODUCT_PROPERTIES += \
-    persist.bluetooth.bqr.event_mask=262238
+    persist.bluetooth.bqr.event_mask=295006 \
+    persist.bluetooth.bqr.vnd_quality_mask=29 \
+    persist.bluetooth.bqr.vnd_trace_mask=0
 else
 PRODUCT_PRODUCT_PROPERTIES += \
-    persist.bluetooth.bqr.event_mask=94
+    persist.bluetooth.bqr.event_mask=295006 \
+    persist.bluetooth.bqr.vnd_quality_mask=16 \
+    persist.bluetooth.bqr.vnd_trace_mask=0
 endif
 
 # Spatial Audio
