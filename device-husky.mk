@@ -42,7 +42,6 @@ include device/google/gs-common/bcmbt/bluetooth.mk
 include device/google/gs-common/touch/stm/stm20.mk
 include device/google/gs-common/touch/gti/gti.mk
 
-
 # go/lyric-soong-variables
 $(call soong_config_set,lyric,camera_hardware,husky)
 $(call soong_config_set,lyric,tuning_product,husky)
@@ -309,6 +308,10 @@ PRODUCT_PRODUCT_PROPERTIES += \
 # PKVM Memory Reclaim
 PRODUCT_VENDOR_PROPERTIES += \
     hypervisor.memory_reclaim.supported=1
+
+# P23 Devices no longer need rlsservice
+PRODUCT_VENDOR_PROPERTIES += \
+    persist.vendor.camera.rls_supported=false
 
 # SKU specific RROs
 PRODUCT_PACKAGES += \
