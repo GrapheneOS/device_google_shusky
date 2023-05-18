@@ -93,6 +93,15 @@
       "ResetOnInit": true
     },
     {
+      "Name": "CPULittleClusterDownRateLimitUs",
+      "Path": "/sys/devices/system/cpu/cpu0/cpufreq/sched_pixel/down_rate_limit_us",
+      "Values": [
+        "2000",
+        "5000"
+      ],
+      "ResetOnInit": true
+    },
+    {
       "Name": "CPUMidClusterMaxFreq",
       "Path": "/sys/devices/system/cpu/cpu4/cpufreq/scaling_max_freq",
       "Values": [
@@ -117,6 +126,15 @@
         "1836000",
         "1221000",
         "0"
+      ],
+      "ResetOnInit": true
+    },
+    {
+      "Name": "CPUMidClusterDownRateLimitUs",
+      "Path": "/sys/devices/system/cpu/cpu4/cpufreq/sched_pixel/down_rate_limit_us",
+      "Values": [
+        "2000",
+        "20000"
       ],
       "ResetOnInit": true
     },
@@ -149,12 +167,31 @@
       "ResetOnInit": true
     },
     {
+      "Name": "CPUBigClusterDownRateLimitUs",
+      "Path": "/sys/devices/system/cpu/cpu8/cpufreq/sched_pixel/down_rate_limit_us",
+      "Values": [
+        "2000",
+        "20000"
+      ],
+      "ResetOnInit": true
+    },
+    {
       "Name": "ReducePreferIdle",
       "Path": "/proc/vendor_sched/reduce_prefer_idle",
       "Values": [
         "0",
         "1"
       ],
+      "ResetOnInit": true
+    },
+    {
+      "Name": "BigClusterPowerDownTargetResidency",
+      "Path": "/sys/devices/platform/cpupm/cpupm/cpd_cl2_target_residency",
+      "Values": [
+        "750000",
+        "10000"
+      ],
+      "DefaultIndex": 0,
       "ResetOnInit": true
     },
     {
@@ -558,8 +595,17 @@
       "DefaultIndex": 0
     },
     {
+      "Name": "PMU_LIT_LIMIT_FREQ",
+      "Path": "/sys/devices/system/cpu/cpufreq/policy0/sched_pixel/limit_frequency",
+      "Values": [
+        "1328000"
+      ],
+      "DefaultIndex": 0,
+      "ResetOnInit": true
+    },
+    {
       "Name": "PMU_LIT_LCPI_THRESHOLD",
-      "Path": "/sys/devices/system/cpu/cpu0/cpufreq/sched_pixel/lcpi_threshold",
+      "Path": "/sys/devices/system/cpu/cpufreq/policy0/sched_pixel/lcpi_threshold",
       "Values": [
         "2",
         "0"
@@ -568,16 +614,17 @@
     },
     {
       "Name": "PMU_LIT_SPC_THRESHOLD",
-      "Path": "/sys/devices/system/cpu/cpu0/cpufreq/sched_pixel/spc_threshold",
+      "Path": "/sys/devices/system/cpu/cpufreq/policy0/sched_pixel/spc_threshold",
       "Values": [
         "70",
+        "30",
         "0"
       ],
       "DefaultIndex": 0
     },
     {
       "Name": "PMU_MID_LCPI_THRESHOLD",
-      "Path": "/sys/devices/system/cpu/cpu4/cpufreq/sched_pixel/lcpi_threshold",
+      "Path": "/sys/devices/system/cpu/cpufreq/policy4/sched_pixel/lcpi_threshold",
       "Values": [
         "6",
         "3"
@@ -586,7 +633,7 @@
     },
     {
       "Name": "PMU_MID_SPC_THRESHOLD",
-      "Path": "/sys/devices/system/cpu/cpu4/cpufreq/sched_pixel/spc_threshold",
+      "Path": "/sys/devices/system/cpu/cpufreq/policy4/sched_pixel/spc_threshold",
       "Values": [
         "65",
         "50"
@@ -595,7 +642,7 @@
     },
     {
       "Name": "PMU_BIG_LIMIT_FREQ",
-      "Path": "/sys/devices/system/cpu/cpu8/cpufreq/sched_pixel/limit_frequency",
+      "Path": "/sys/devices/system/cpu/cpufreq/policy8/sched_pixel/limit_frequency",
       "Values": [
         "2556000",
         "1852000"
@@ -604,7 +651,7 @@
     },
     {
       "Name": "PMU_BIG_LCPI_THRESHOLD",
-      "Path": "/sys/devices/system/cpu/cpu8/cpufreq/sched_pixel/lcpi_threshold",
+      "Path": "/sys/devices/system/cpu/cpufreq/policy8/sched_pixel/lcpi_threshold",
       "Values": [
         "5",
         "3"
@@ -613,7 +660,7 @@
     },
     {
       "Name": "PMU_BIG_SPC_THRESHOLD",
-      "Path": "/sys/devices/system/cpu/cpu8/cpufreq/sched_pixel/spc_threshold",
+      "Path": "/sys/devices/system/cpu/cpufreq/policy8/sched_pixel/spc_threshold",
       "Values": [
         "69",
         "50"
@@ -792,6 +839,12 @@
       "Node": "DsuMaxFreq",
       "Duration": 33,
       "Value": "9999999"
+    },
+    {
+      "PowerHint": "DISPLAY_INACTIVE",
+      "Node": "BigClusterPowerDownTargetResidency",
+      "Duration": 0,
+      "Value": "10000"
     },
     {
       "PowerHint": "CAMERA_LAUNCH",
@@ -1553,19 +1606,37 @@
       "PowerHint": "CAMERA_STREAMING_VIDEO_CALL",
       "Node": "CPUBigClusterMaxFreq",
       "Duration": 0,
-      "Value": "1164000"
+      "Value": "2049000"
     },
     {
       "PowerHint": "CAMERA_STREAMING_VIDEO_CALL",
       "Node": "CPUMidClusterMaxFreq",
       "Duration": 0,
-      "Value": "1328000"
+      "Value": "1836000"
     },
     {
       "PowerHint": "CAMERA_STREAMING_VIDEO_CALL",
       "Node": "CPULittleClusterMaxFreq",
       "Duration": 0,
-      "Value": "1328000"
+      "Value": "1704000"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_VIDEO_CALL",
+      "Node": "CPUBigClusterDownRateLimitUs",
+      "Duration": 0,
+      "Value": "2000"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_VIDEO_CALL",
+      "Node": "CPUMidClusterDownRateLimitUs",
+      "Duration": 0,
+      "Value": "2000"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_VIDEO_CALL",
+      "Node": "CPULittleClusterDownRateLimitUs",
+      "Duration": 0,
+      "Value": "2000"
     },
     {
       "PowerHint": "CAMERA_STREAMING_VIDEO_CALL",
@@ -1595,7 +1666,7 @@
       "PowerHint": "CAMERA_STREAMING_VIDEO_CALL",
       "Node": "CDCpuset",
       "Duration": 0,
-      "Value": "4-7"
+      "Value": "0-7"
     },
     {
       "PowerHint": "CAMERA_STREAMING_VIDEO_CALL",
@@ -1608,6 +1679,30 @@
       "Node": "CPUDVFSHeadroom",
       "Duration": 0,
       "Value": "1100"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_VIDEO_CALL",
+      "Node": "PMU_POLL",
+      "Duration": 0,
+      "Value": "1"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_VIDEO_CALL",
+      "Node": "PMU_LIT_LIMIT_FREQ",
+      "Duration": 0,
+      "Value": "1328000"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_VIDEO_CALL",
+      "Node": "PMU_LIT_LCPI_THRESHOLD",
+      "Duration": 0,
+      "Value": "2"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_VIDEO_CALL",
+      "Node": "PMU_LIT_SPC_THRESHOLD",
+      "Duration": 0,
+      "Value": "30"
     },
     {
       "PowerHint": "CAMERA_STREAMING_VIDEO_CALL",
