@@ -406,6 +406,5 @@ PRODUCT_VENDOR_PROPERTIES += \
 PRODUCT_VENDOR_PROPERTIES += \
     ro.usb.uvc.enabled=true
 
-# DisplayPort should be disabled by default (b/300167292)
 PRODUCT_VENDOR_PROPERTIES += \
-       persist.vendor.usb.displayport.enabled=0
+       persist.vendor.usb.displayport.enabled=1
