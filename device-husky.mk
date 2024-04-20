@@ -540,3 +540,5 @@ PRODUCT_COPY_FILES += \
 PRODUCT_VENDOR_PROPERTIES += \
     vendor.powerhal.apf_disabled=false \
     vendor.powerhal.apf_enabled=true
+
+PRODUCT_VENDOR_PROPERTIES := $(filter-out ro.vendor.build.svn=% , $(PRODUCT_VENDOR_PROPERTIES))
