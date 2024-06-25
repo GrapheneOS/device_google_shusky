@@ -322,11 +322,7 @@ PRODUCT_VENDOR_PROPERTIES += \
 	persist.device_config.configuration.disable_rescue_party=true
 
 # Fingerprint HAL
-ifneq (,$(filter AP4%,$(RELEASE_PLATFORM_VERSION)))
-GOODIX_CONFIG_BUILD_VERSION := g7_trusty_next
-else
 GOODIX_CONFIG_BUILD_VERSION := g7_trusty
-endif
 APEX_FPS_TA_DIR := //vendor/google_devices/shusky/prebuilts
 $(call inherit-product-if-exists, vendor/goodix/udfps/configuration/udfps_common.mk)
 ifeq ($(filter factory%, $(TARGET_PRODUCT)),)
