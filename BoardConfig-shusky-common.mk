@@ -27,6 +27,7 @@ BOARD_KERNEL_MODULES_16K += $(file < $(TARGET_KERNEL_DIR_16K)/vendor_kernel_boot
 BOARD_KERNEL_MODULES_16K += $(file < $(TARGET_KERNEL_DIR_16K)/system_dlkm.modules.load)
 BOARD_KERNEL_MODULES_16K += $(file < $(TARGET_KERNEL_DIR_16K)/vendor_dlkm.modules.load)
 BOARD_KERNEL_MODULES_16K := $(foreach module,$(BOARD_KERNEL_MODULES_16K),$(TARGET_KERNEL_DIR_16K)/$(notdir $(module)))
+BOARD_PREBUILT_DTBOIMAGE_16KB := $(TARGET_KERNEL_DIR_16K)/dtbo.img
 
 # Shusky targets use exynos-bcm_dbg.ko module instead of bcm_dbg.ko.
 BOARD_KERNEL_MODULES_16K := $(filter-out %/bcm_dbg.ko,$(BOARD_KERNEL_MODULES_16K))
