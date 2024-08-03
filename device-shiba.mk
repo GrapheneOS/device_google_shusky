@@ -378,6 +378,10 @@ PRODUCT_VENDOR_PROPERTIES += \
     ro.vendor.vibrator.hal.dbc.txlvlholdoffms=0 \
     ro.vendor.vibrator.hal.pm.activetimeout=5
 
+# Override Output Distortion Gain
+PRODUCT_VENDOR_PROPERTIES += \
+    vendor.audio.hapticgenerator.distortion.output.gain=0.38
+
 # Increment the SVN for any official public releases
 ifdef RELEASE_SVN_SHIBA
 TARGET_SVN ?= $(RELEASE_SVN_SHIBA)
