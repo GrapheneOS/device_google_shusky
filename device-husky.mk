@@ -410,7 +410,7 @@ ifdef RELEASE_SVN_HUSKY
 TARGET_SVN ?= $(RELEASE_SVN_HUSKY)
 else
 # Set this for older releases that don't use build flag
-TARGET_SVN ?= 35
+TARGET_SVN ?= 38
 endif
 
 PRODUCT_VENDOR_PROPERTIES += \
