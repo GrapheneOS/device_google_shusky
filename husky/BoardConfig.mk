@@ -33,9 +33,9 @@ RELEASE_GOOGLE_PRODUCT_BOOTLOADER_DIR := bootloader/$(RELEASE_GOOGLE_BOOTLOADER_
 $(call soong_config_set,shusky_bootloader,prebuilt_dir,$(RELEASE_GOOGLE_BOOTLOADER_HUSKY_DIR))
 
 ifdef PHONE_CAR_BOARD_PRODUCT
-    include vendor/auto/embedded/products/$(PHONE_CAR_BOARD_PRODUCT)/BoardConfig.mk
+    include device/google_car/$(PHONE_CAR_BOARD_PRODUCT)/BoardConfig.mk
 else
-    TARGET_SCREEN_DENSITY := 480 
+    TARGET_SCREEN_DENSITY := 480
 endif
 
 BOARD_USES_GENERIC_AUDIO := true
