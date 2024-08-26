@@ -482,3 +482,5 @@ PRODUCT_NO_BIONIC_PAGE_SIZE_MACRO := true
 PRODUCT_CHECK_PREBUILT_MAX_PAGE_SIZE := true
 
 PRODUCT_VENDOR_PROPERTIES := $(filter-out ro.vendor.build.svn=% , $(PRODUCT_VENDOR_PROPERTIES))
+
+PRODUCT_PACKAGES += fir-proximity-feature.xml
