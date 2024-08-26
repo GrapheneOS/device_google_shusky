@@ -215,3 +215,5 @@ PRODUCT_NO_BIONIC_PAGE_SIZE_MACRO := true
 ifneq ($(wildcard vendor/arm/mali/valhall),)
 PRODUCT_CHECK_PREBUILT_MAX_PAGE_SIZE := true
 endif
+
+PRODUCT_PACKAGES += fir-proximity-feature.xml
