@@ -27,10 +27,6 @@ TARGET_SCREEN_DENSITY := 440
 BOARD_USES_GENERIC_AUDIO := true
 USES_DEVICE_GOOGLE_SHUSKY := true
 
-RELEASE_GOOGLE_BOOTLOADER_RIPCURRENT_DIR ?= pdk# Keep this for pdk TODO: b/327119000
-RELEASE_GOOGLE_PRODUCT_BOOTLOADER_DIR := bootloader/$(RELEASE_GOOGLE_BOOTLOADER_RIPCURRENT_DIR)
-$(call soong_config_set,shusky_bootloader,prebuilt_dir,$(RELEASE_GOOGLE_BOOTLOADER_RIPCURRENT_DIR))
-
 include device/google/shusky/device-shusky-common.mk
 
 include device/google/zuma/BoardConfig-common.mk
