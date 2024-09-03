@@ -279,7 +279,7 @@
       "Path": "/proc/vendor_sched/cpu_skip_mask",
       "Values": [
         "0x0",
-        "0x80"
+        "0x100"
       ],
       "ResetOnInit": true
     },
@@ -463,7 +463,7 @@
       "Path": "/proc/vendor_sched/groups/sys/group_cfs_skip_mask",
       "Values": [
         "0x0",
-        "0x80"
+        "0x100"
       ],
       "ResetOnInit": true
     },
