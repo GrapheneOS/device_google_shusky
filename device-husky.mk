@@ -519,8 +519,9 @@ PRODUCT_NO_BIONIC_PAGE_SIZE_MACRO := true
 PRODUCT_CHECK_PREBUILT_MAX_PAGE_SIZE := true
 
 # Bluetooth device id
+# Husky: 0x410D
 PRODUCT_PRODUCT_PROPERTIES += \
-    bluetooth.device_id.product_id=20493
+    bluetooth.device_id.product_id=16653
 
 # Set support for LEA multicodec
 PRODUCT_PRODUCT_PROPERTIES += \

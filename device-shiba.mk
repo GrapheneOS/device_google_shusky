@@ -488,8 +488,9 @@ PRODUCT_NO_BIONIC_PAGE_SIZE_MACRO := true
 PRODUCT_CHECK_PREBUILT_MAX_PAGE_SIZE := true
 
 # Bluetooth device id
+# Shiba: 0x410E
 PRODUCT_PRODUCT_PROPERTIES += \
-    bluetooth.device_id.product_id=20492
+    bluetooth.device_id.product_id=16654
 
 # Set support for LEA multicodec
 PRODUCT_PRODUCT_PROPERTIES += \
