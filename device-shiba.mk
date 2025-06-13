@@ -280,7 +280,6 @@ PRODUCT_PRODUCT_PROPERTIES += \
 
 # PowerStats HAL
 PRODUCT_SOONG_NAMESPACES += \
-    device/google/shusky/powerstats/shiba \
     device/google/shusky
 
 # WiFi Overlay

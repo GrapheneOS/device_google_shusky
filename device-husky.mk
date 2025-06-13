@@ -292,7 +292,6 @@ PRODUCT_PRODUCT_PROPERTIES += \
 
 # PowerStats HAL
 PRODUCT_SOONG_NAMESPACES += \
-    device/google/shusky/powerstats/husky \
     device/google/shusky
 
 # WiFi Overlay
