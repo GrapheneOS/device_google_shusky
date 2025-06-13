@@ -221,10 +221,6 @@ PRODUCT_PRODUCT_PROPERTIES += \
 # 	ro.hardware.keystore=software \
 # 	ro.hardware.gatekeeper=software
 
-# PowerStats HAL
-PRODUCT_SOONG_NAMESPACES += \
-    device/google/shusky/powerstats/ripcurrent
-
 # WiFi Overlay
 PRODUCT_PACKAGES += \
     WifiOverlay2023
