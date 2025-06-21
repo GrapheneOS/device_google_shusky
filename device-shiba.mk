@@ -101,9 +101,6 @@ PRODUCT_COPY_FILES += \
 	frameworks/native/data/etc/android.hardware.se.omapi.uicc.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.se.omapi.uicc.xml \
 	device/google/shusky/nfc/libse-gto-hal.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libse-gto-hal.conf
 
-# Bluetooth HAL
-PRODUCT_COPY_FILES += \
-	device/google/shusky/bluetooth/bt_vendor_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth/bt_vendor_overlay.conf
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.bluetooth.a2dp_offload.supported=true \
     persist.bluetooth.a2dp_offload.disabled=false \
@@ -112,18 +109,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Enable Bluetooth AutoOn feature
 PRODUCT_PRODUCT_PROPERTIES += \
     bluetooth.server.automatic_turn_on=true
-
-# Bluetooth Tx power caps
-PRODUCT_COPY_FILES += \
-	$(LOCAL_PATH)/bluetooth/bluetooth_power_limits_shiba.csv:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_power_limits.csv \
-	$(LOCAL_PATH)/bluetooth/bluetooth_power_limits_shiba_CA.csv:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_power_limits_CA.csv \
-	$(LOCAL_PATH)/bluetooth/bluetooth_power_limits_shiba_EU.csv:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_power_limits_EU.csv \
-	$(LOCAL_PATH)/bluetooth/bluetooth_power_limits_shiba_JP.csv:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_power_limits_JP.csv \
-	$(LOCAL_PATH)/bluetooth/bluetooth_power_limits_shiba_US.csv:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_power_limits_US.csv \
-	$(LOCAL_PATH)/bluetooth/bluetooth_power_limits_shiba_GKWS6_CA.csv:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_power_limits_GKWS6_CA.csv \
-	$(LOCAL_PATH)/bluetooth/bluetooth_power_limits_shiba_GKWS6_EU.csv:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_power_limits_GKWS6_EU.csv \
-	$(LOCAL_PATH)/bluetooth/bluetooth_power_limits_shiba_GKWS6_JP.csv:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_power_limits_GKWS6_JP.csv \
-	$(LOCAL_PATH)/bluetooth/bluetooth_power_limits_shiba_GKWS6_US.csv:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_power_limits_GKWS6_US.csv
 
 # POF
 PRODUCT_PRODUCT_PROPERTIES += \
@@ -222,10 +207,6 @@ PRODUCT_PRODUCT_PROPERTIES += \
 PRODUCT_PRODUCT_PROPERTIES += \
 	ro.bluetooth.leaudio_offload.supported=true \
 	persist.bluetooth.leaudio_offload.disabled=false
-
-# Bluetooth LE Auido offload capabilities setting
-PRODUCT_COPY_FILES += \
-	device/google/shusky/bluetooth/le_audio_codec_capabilities.xml:$(TARGET_COPY_OUT_VENDOR)/etc/le_audio_codec_capabilities.xml
 
 # LE Audio Unicast Allowlist
 PRODUCT_PRODUCT_PROPERTIES += \
@@ -496,13 +477,6 @@ PRODUCT_PRODUCT_PROPERTIES += \
 # Set support for LEA multicodec
 PRODUCT_PRODUCT_PROPERTIES += \
     bluetooth.core.le_audio.codec_extension_aidl.enabled=true
-
-# LE Audio configuration scenarios
-PRODUCT_COPY_FILES += \
-    device/google/caimito/bluetooth/audio_set_scenarios.json:$(TARGET_COPY_OUT_VENDOR)/etc/aidl/le_audio/aidl_audio_set_scenarios.json
-
-PRODUCT_COPY_FILES += \
-    device/google/caimito/bluetooth/audio_set_configurations.json:$(TARGET_COPY_OUT_VENDOR)/etc/aidl/le_audio/aidl_audio_set_configurations.json
 
 # Enable APF by default
 PRODUCT_VENDOR_PROPERTIES += \
