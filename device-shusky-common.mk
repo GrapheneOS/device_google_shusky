@@ -13,6 +13,3 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
-PRODUCT_COPY_FILES += \
-	$(TARGET_VENDOR_PERF_CONFIG_PATH)/powerhint-$(TARGET_DEVICE).json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json
