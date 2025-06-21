@@ -15,9 +15,6 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/aosp_ripcurrent.mk \
-    $(LOCAL_DIR)/aosp_ripcurrent_fullmte.mk \
-    $(LOCAL_DIR)/factory_ripcurrent.mk \
     $(LOCAL_DIR)/aosp_husky.mk \
     $(LOCAL_DIR)/aosp_husky_fullmte.mk \
     $(LOCAL_DIR)/aosp_husky_pgagnostic.mk \
@@ -28,6 +25,5 @@ PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/factory_shiba.mk
 
 COMMON_LUNCH_CHOICES := \
-    aosp_ripcurrent-trunk_staging-userdebug \
     aosp_husky-trunk_staging-userdebug \
     aosp_shiba-trunk_staging-userdebug
