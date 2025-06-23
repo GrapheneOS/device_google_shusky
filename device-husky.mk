@@ -56,7 +56,6 @@ $(call inherit-product-if-exists, vendor/google_devices/shusky/proprietary/Wallp
 
 # display
 DEVICE_PACKAGE_OVERLAYS += device/google/shusky/husky/overlay
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.surface_flinger.ignore_hdr_camera_layers=true
 
 CAMERA_PRODUCT ?= husky
 
@@ -205,9 +204,6 @@ PRODUCT_VENDOR_PROPERTIES += \
     vendor.primarydisplay.op.hs_hz=120 \
     vendor.primarydisplay.op.ns_hz=60 \
     vendor.primarydisplay.op.ns_min_dbv=1172
-
-# kernel idle timer for display driver
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.surface_flinger.support_kernel_idle_timer=true
 
 # lhbm peak brightness delay: decided by kernel
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += vendor.primarydisplay.lhbm.frames_to_reach_peak_brightness=0
