@@ -170,9 +170,6 @@ endif
 PRODUCT_VENDOR_PROPERTIES += \
     persist.vendor.udfps.auto_exposure_compensation_supported=true
 
-# Display
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.surface_flinger.set_idle_timer_ms=1000
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.surface_flinger.ignore_hdr_camera_layers=true
 # lhbm peak brightness delay: decided by kernel
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += vendor.primarydisplay.lhbm.frames_to_reach_peak_brightness=0
 
