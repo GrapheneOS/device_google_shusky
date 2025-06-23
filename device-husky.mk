@@ -194,22 +194,8 @@ PRODUCT_VENDOR_PROPERTIES += \
 # Media Performance Class 14
 PRODUCT_PRODUCT_PROPERTIES += ro.odm.build.media_performance_class=34
 
-# config of display brightness dimming
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += vendor.display.0.brightness.dimming.usage?=1
-PRODUCT_VENDOR_PROPERTIES += \
-    vendor.primarydisplay.op.hs_hz=120 \
-    vendor.primarydisplay.op.ns_hz=60 \
-    vendor.primarydisplay.op.ns_min_dbv=1172
-
-# lhbm peak brightness delay: decided by kernel
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += vendor.primarydisplay.lhbm.frames_to_reach_peak_brightness=0
-
 # Display LBE
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += vendor.display.lbe.supported=1
-
-# blocking zone for min idle refresh rate
-PRODUCT_VENDOR_PROPERTIES += \
-    ro.vendor.primarydisplay.blocking_zone.min_refresh_rate_by_nits=15:10,:1
 
 # Display ACL
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += vendor.display.0.brightness.acl.default=0
