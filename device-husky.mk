@@ -221,10 +221,6 @@ PRODUCT_PACKAGES += \
 # Window Extensions
 $(call inherit-product, $(SRC_TARGET_DIR)/product/window_extensions.mk)
 
-# Enable DeviceAsWebcam support
-PRODUCT_VENDOR_PROPERTIES += \
-    ro.usb.uvc.enabled=true
-
 PRODUCT_PACKAGES += \
 	NfcOverlayHusky \
 
