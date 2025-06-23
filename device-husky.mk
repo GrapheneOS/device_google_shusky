@@ -58,11 +58,6 @@ $(call inherit-product-if-exists, vendor/google_devices/shusky/proprietary/Wallp
 DEVICE_PACKAGE_OVERLAYS += device/google/shusky/husky/overlay
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.surface_flinger.ignore_hdr_camera_layers=true
 
-PRODUCT_COPY_FILES += \
-	device/google/shusky/husky/display_colordata_dev_cal0.pb:$(TARGET_COPY_OUT_VENDOR)/etc/display_colordata_dev_cal0.pb \
-    device/google/shusky/husky/display_golden_google-hk3_cal0.pb:$(TARGET_COPY_OUT_VENDOR)/etc/display_golden_google-hk3_cal0.pb \
-    device/google/shusky/display_golden_external_display_cal2.pb:$(TARGET_COPY_OUT_VENDOR)/etc/display_golden_external_display_cal2.pb
-
 CAMERA_PRODUCT ?= husky
 
 ifeq ($(RELEASE_PIXEL_AIDL_AUDIO_HAL_ZUMA),true)
@@ -361,10 +356,6 @@ PRODUCT_VENDOR_PROPERTIES += \
 
 # Display ACL
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += vendor.display.0.brightness.acl.default=0
-
-# display color data
-PRODUCT_COPY_FILES += \
-	device/google/shusky/husky/panel_config_google-hk3_cal0.pb:$(TARGET_COPY_OUT_VENDOR)/etc/panel_config_google-hk3_cal0.pb
 
 # Vibrator HAL
 $(call soong_config_set,haptics,kernel_ver,v$(subst .,_,$(TARGET_LINUX_KERNEL_VERSION)))
