@@ -92,19 +92,6 @@ PRODUCT_COPY_FILES += \
 	frameworks/native/data/etc/android.hardware.se.omapi.ese.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.se.omapi.ese.xml \
 	frameworks/native/data/etc/android.hardware.se.omapi.uicc.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.se.omapi.uicc.xml \
 
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.bluetooth.a2dp_offload.supported=true \
-    persist.bluetooth.a2dp_offload.disabled=false \
-    persist.bluetooth.a2dp_offload.cap=sbc-aac-aptx-aptxhd-ldac-opus
-
-# Enable Bluetooth AutoOn feature
-PRODUCT_PRODUCT_PROPERTIES += \
-    bluetooth.server.automatic_turn_on=true
-
-# POF
-PRODUCT_PRODUCT_PROPERTIES += \
-    ro.bluetooth.finder.supported=true
-
 ifeq ($(USE_AUDIO_HAL_AIDL),true)
 # AIDL
 
