@@ -67,12 +67,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
         device/google/shusky/conf/init.recovery.device.rc:$(TARGET_COPY_OUT_RECOVERY)/root/init.recovery.shiba.rc
 
-# MIPI Coex Configs
-PRODUCT_COPY_FILES += \
-        device/google/shusky/shiba/radio/shiba_camera_front_dbr_coex_table.csv:$(TARGET_COPY_OUT_VENDOR)/etc/modem/camera_front_dbr_coex_table.csv \
-        device/google/shusky/shiba/radio/shiba_camera_front_mipi_coex_table.csv:$(TARGET_COPY_OUT_VENDOR)/etc/modem/camera_front_mipi_coex_table.csv \
-		device/google/shusky/shiba/radio/shiba_display_primary_mipi_coex_table.csv:$(TARGET_COPY_OUT_VENDOR)/etc/modem/display_primary_mipi_coex_table.csv
-
 # Camera
 PRODUCT_PROPERTY_OVERRIDES += \
         persist.vendor.camera.rls_range_supported=false
