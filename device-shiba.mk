@@ -200,9 +200,6 @@ ifeq ($(RELEASE_IS_EMR), true)
         ro.build.version.emergency_base_os=$(RELEASE_BASE_OS_SHIBA)
     endif
 endif
-# P23 Devices no longer need rlsservice
-PRODUCT_VENDOR_PROPERTIES += \
-    persist.vendor.camera.rls_supported=false
 
 # Setup Wizard device-specific settings
 PRODUCT_PRODUCT_PROPERTIES += \
