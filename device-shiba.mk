@@ -205,10 +205,6 @@ ifeq ($(RELEASE_IS_EMR), true)
     endif
 endif
 
-# PKVM Memory Reclaim
-PRODUCT_VENDOR_PROPERTIES += \
-    hypervisor.memory_reclaim.supported=1
-
 # Settings Overlay
 PRODUCT_PACKAGES += \
     SettingsShibaOverlay
