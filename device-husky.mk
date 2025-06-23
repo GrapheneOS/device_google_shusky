@@ -424,11 +424,6 @@ ifeq ($(RELEASE_IS_EMR), true)
         ro.build.version.emergency_base_os=$(RELEASE_BASE_OS_HUSKY)
     endif
 endif
-# WLC userdebug specific
-ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
-    PRODUCT_COPY_FILES += \
-        device/google/zuma/init.hardware.wlc.rc.userdebug:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.wlc.rc
-endif
 
 # Setup Wizard device-specific settings
 PRODUCT_PRODUCT_PROPERTIES += \
