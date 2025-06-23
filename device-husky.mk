@@ -225,13 +225,6 @@ PRODUCT_PACKAGES += \
 # Window Extensions
 $(call inherit-product, $(SRC_TARGET_DIR)/product/window_extensions.mk)
 
-# Keyboard height ratio and bottom padding in dp for portrait mode
-PRODUCT_PRODUCT_PROPERTIES += \
-         ro.com.google.ime.kb_pad_port_b=10.4
-
-PRODUCT_PRODUCT_PROPERTIES ?= \
-    ro.com.google.ime.height_ratio=1.0
-
 # Enable camera exif model/make reporting
 PRODUCT_VENDOR_PROPERTIES += \
     persist.vendor.camera.exif_reveal_make_model=true
