@@ -214,10 +214,6 @@ ifeq ($(RELEASE_IS_EMR), true)
     endif
 endif
 
-# Setup Wizard device-specific settings
-PRODUCT_PRODUCT_PROPERTIES += \
-    setupwizard.feature.enable_quick_start_flow=true \
-
 # Quick Start device-specific settings
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.quick_start.oem_id=00e0 \
