@@ -144,47 +144,6 @@ PRODUCT_PACKAGES += \
 	libspatialaudio \
 	librondo
 
-# Bluetooth Super Wide Band
-PRODUCT_PRODUCT_PROPERTIES += \
-	bluetooth.hfp.swb.supported=true
-
-# Bluetooth LE Audio
-PRODUCT_PRODUCT_PROPERTIES += \
-	ro.bluetooth.leaudio_switcher.supported?=true \
-	bluetooth.profile.bap.unicast.client.enabled?=true \
-	bluetooth.profile.csip.set_coordinator.enabled?=true \
-	bluetooth.profile.hap.client.enabled?=true \
-	bluetooth.profile.mcp.server.enabled?=true \
-	bluetooth.profile.ccp.server.enabled?=true \
-	bluetooth.profile.vcp.controller.enabled?=true
-
-# Bluetooth LE Audio Broadcast
-PRODUCT_PRODUCT_PROPERTIES += \
-	bluetooth.profile.bap.broadcast.assist.enabled=true \
-	bluetooth.profile.bap.broadcast.source.enabled=true
-
-# Bluetooth LE Audio enable hardware offloading
-PRODUCT_PRODUCT_PROPERTIES += \
-	ro.bluetooth.leaudio_offload.supported=true \
-	persist.bluetooth.leaudio_offload.disabled=false
-
-# LE Audio Unicast Allowlist
-PRODUCT_PRODUCT_PROPERTIES += \
-    persist.bluetooth.leaudio.allow_list=SM-R510,WF-1000XM5,SM-R630
-
-# Bluetooth LE Audio CIS handover to SCO
-# Set the property only for the controller couldn't support CIS/SCO simultaneously. More detailed in b/242908683.
-PRODUCT_PRODUCT_PROPERTIES += \
-	persist.bluetooth.leaudio.notify.idle.during.call=true
-
-# Support LE Audio dual mic SWB call
-PRODUCT_PRODUCT_PROPERTIES += \
-    bluetooth.leaudio.dual_bidirection_swb.supported=true
-
-# Support LE & Classic concurrent encryption (b/330704060)
-PRODUCT_PRODUCT_PROPERTIES += \
-    bluetooth.ble.allow_enc_with_bredr=true
-
 # Support One-Handed mode
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.support_one_handed_mode=true
