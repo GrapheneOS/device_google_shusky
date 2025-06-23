@@ -131,10 +131,6 @@ PRODUCT_PACKAGES += \
 	libspatialaudio \
 	librondo
 
-# Support One-Handed mode
-PRODUCT_PRODUCT_PROPERTIES += \
-    ro.support_one_handed_mode=true
-
 # Keymaster HAL
 #LOCAL_KEYMASTER_PRODUCT_PACKAGE ?= android.hardware.keymaster@4.1-service
 
