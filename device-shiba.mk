@@ -266,33 +266,9 @@ PRODUCT_SOONG_NAMESPACES += vendor/google_devices/shusky/prebuilts
 # SDK build system
 include device/google/gs-common/gps/brcm/device.mk
 
-PRODUCT_COPY_FILES += \
-       device/google/shusky/location/gps.cer:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/gps.cer
-
 # Location
-ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
-    PRODUCT_COPY_FILES += \
-        device/google/shusky/location/lhd.conf:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/lhd.conf \
-        device/google/shusky/location/scd.conf:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/scd.conf
-    ifneq (,$(filter 6.1, $(TARGET_LINUX_KERNEL_VERSION)))
-        PRODUCT_COPY_FILES += \
-            device/google/shusky/location/gps.6.1.xml.sb3:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/gps.xml
-    else
-        PRODUCT_COPY_FILES += \
-            device/google/shusky/location/gps.xml.sb3:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/gps.xml
-    endif
-else
-    PRODUCT_COPY_FILES += \
-        device/google/shusky/location/lhd_user.conf:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/lhd.conf \
-        device/google/shusky/location/scd_user.conf:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/scd.conf
-    ifneq (,$(filter 6.1, $(TARGET_LINUX_KERNEL_VERSION)))
-        PRODUCT_COPY_FILES += \
-            device/google/shusky/location/gps_user.6.1.xml.sb3:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/gps.xml
-    else
-        PRODUCT_COPY_FILES += \
-            device/google/shusky/location/gps_user.xml.sb3:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/gps.xml
-    endif
-endif
+PRODUCT_COPY_FILES += \
+    device/google/shusky/location/gps_user.6.1.xml:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/gps.xml
 
 # Set zram size
 PRODUCT_VENDOR_PROPERTIES += \
