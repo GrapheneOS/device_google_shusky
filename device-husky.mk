@@ -118,10 +118,6 @@ PRODUCT_PACKAGES += \
 
 endif
 
-# declare use of spatial audio
-PRODUCT_PROPERTY_OVERRIDES += \
-	ro.audio.spatializer_enabled=true
-
 # Audio CCA property
 PRODUCT_PROPERTY_OVERRIDES += \
 	persist.vendor.audio.cca.enabled=false
