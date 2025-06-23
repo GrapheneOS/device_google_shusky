@@ -170,9 +170,6 @@ else
 $(call inherit-product-if-exists, vendor/goodix/udfps/configuration/udfps_factory.mk)
 endif
 
-# Media Performance Class 14
-PRODUCT_PRODUCT_PROPERTIES += ro.odm.build.media_performance_class=34
-
 # Display LBE
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += vendor.display.lbe.supported=1
 
