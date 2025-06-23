@@ -128,12 +128,6 @@ PRODUCT_PRODUCT_PROPERTIES += \
     persist.bluetooth.bqr.vnd_quality_mask=29 \
     persist.bluetooth.bqr.vnd_trace_mask=0 \
     persist.bluetooth.vendor.btsnoop=true
-else
-PRODUCT_PRODUCT_PROPERTIES += \
-    persist.bluetooth.bqr.event_mask=295006 \
-    persist.bluetooth.bqr.vnd_quality_mask=16 \
-    persist.bluetooth.bqr.vnd_trace_mask=0 \
-    persist.bluetooth.vendor.btsnoop=false
 endif
 
 # Spatial Audio
