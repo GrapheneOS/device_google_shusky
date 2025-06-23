@@ -242,8 +242,3 @@ PRODUCT_NO_BIONIC_PAGE_SIZE_MACRO := true
 ifneq ($(wildcard vendor/arm/mali/valhall),)
 PRODUCT_CHECK_PREBUILT_MAX_PAGE_SIZE := true
 endif
-
-# Enable APF by default
-PRODUCT_VENDOR_PROPERTIES += \
-    vendor.powerhal.apf_disabled=false \
-    vendor.powerhal.apf_enabled=true
