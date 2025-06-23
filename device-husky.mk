@@ -81,10 +81,6 @@ include device/google/gs-common/touch/touchinspector/touchinspector.mk
 PRODUCT_COPY_FILES += \
 	device/google/shusky/conf/init.husky.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.husky.rc
 
-# Recovery files
-PRODUCT_COPY_FILES += \
-        device/google/shusky/conf/init.recovery.device.rc:$(TARGET_COPY_OUT_RECOVERY)/root/init.recovery.husky.rc
-
 # MIPI Coex Configs
 PRODUCT_COPY_FILES += \
         device/google/shusky/husky/radio/husky_camera_front_dbr_coex_table.csv:$(TARGET_COPY_OUT_VENDOR)/etc/modem/camera_front_dbr_coex_table.csv \

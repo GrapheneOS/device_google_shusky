@@ -63,10 +63,6 @@ include device/google/gs-common/touch/gti/predump_gti.mk
 PRODUCT_COPY_FILES += \
 	device/google/shusky/conf/init.shiba.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.shiba.rc
 
-# Recovery files
-PRODUCT_COPY_FILES += \
-        device/google/shusky/conf/init.recovery.device.rc:$(TARGET_COPY_OUT_RECOVERY)/root/init.recovery.shiba.rc
-
 # MIPI Coex Configs
 PRODUCT_COPY_FILES += \
         device/google/shusky/shiba/radio/shiba_camera_front_dbr_coex_table.csv:$(TARGET_COPY_OUT_VENDOR)/etc/modem/camera_front_dbr_coex_table.csv \
