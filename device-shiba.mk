@@ -226,15 +226,6 @@ ifneq ($(wildcard vendor/arm/mali/valhall),)
 PRODUCT_CHECK_PREBUILT_MAX_PAGE_SIZE := true
 endif
 
-# Bluetooth device id
-# Shiba: 0x410E
-PRODUCT_PRODUCT_PROPERTIES += \
-    bluetooth.device_id.product_id=16654
-
-# Set support for LEA multicodec
-PRODUCT_PRODUCT_PROPERTIES += \
-    bluetooth.core.le_audio.codec_extension_aidl.enabled=true
-
 # Enable APF by default
 PRODUCT_VENDOR_PROPERTIES += \
     vendor.powerhal.apf_disabled=false \
