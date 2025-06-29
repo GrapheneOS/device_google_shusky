@@ -55,7 +55,6 @@ $(call inherit-product-if-exists, vendor/qorvo/uwb/qm35-hal/Device.mk)
 $(call inherit-product-if-exists, vendor/google_devices/shusky/proprietary/WallpapersHusky.mk)
 
 # display
-DEVICE_PACKAGE_OVERLAYS += device/google/shusky/husky/overlay
 
 CAMERA_PRODUCT ?= husky
 
@@ -134,12 +133,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_SOONG_NAMESPACES += \
     device/google/shusky
 
-# WiFi Overlay
-PRODUCT_PACKAGES += \
-	UwbOverlayHK3 \
-	WifiOverlay2023 \
-	PixelWifiOverlay2023
-
 # Trusty liboemcrypto.so
 PRODUCT_SOONG_NAMESPACES += vendor/google_devices/shusky/prebuilts
 
@@ -205,15 +198,8 @@ ifeq ($(RELEASE_IS_EMR), true)
     endif
 endif
 
-# Settings Overlay
-PRODUCT_PACKAGES += \
-    SettingsHuskyOverlay
-
 # Window Extensions
 $(call inherit-product, $(SRC_TARGET_DIR)/product/window_extensions.mk)
-
-PRODUCT_PACKAGES += \
-	NfcOverlayHusky \
 
 PRODUCT_PACKAGES += \
     NoCutoutOverlay \

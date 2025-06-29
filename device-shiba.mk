@@ -46,7 +46,6 @@ $(call inherit-product-if-exists, vendor/google_devices/shusky/proprietary/shiba
 $(call inherit-product-if-exists, vendor/google_devices/shiba/proprietary/device-vendor.mk)
 $(call inherit-product-if-exists, vendor/google_devices/shusky/proprietary/WallpapersShiba.mk)
 
-DEVICE_PACKAGE_OVERLAYS += device/google/shusky/shiba/overlay
 CAMERA_PRODUCT ?= shiba
 
 ifeq ($(RELEASE_PIXEL_AIDL_AUDIO_HAL_ZUMA),true)
@@ -126,11 +125,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_SOONG_NAMESPACES += \
     device/google/shusky
 
-# WiFi Overlay
-PRODUCT_PACKAGES += \
-	WifiOverlay2023 \
-	PixelWifiOverlay2023
-
 # Trusty liboemcrypto.so
 PRODUCT_SOONG_NAMESPACES += vendor/google_devices/shusky/prebuilts
 
@@ -192,15 +186,8 @@ ifeq ($(RELEASE_IS_EMR), true)
     endif
 endif
 
-# Settings Overlay
-PRODUCT_PACKAGES += \
-    SettingsShibaOverlay
-
 # Window Extensions
 $(call inherit-product, $(SRC_TARGET_DIR)/product/window_extensions.mk)
-
-PRODUCT_PACKAGES += \
-    NfcOverlayShiba
 
 PRODUCT_PACKAGES += \
     NoCutoutOverlay \
