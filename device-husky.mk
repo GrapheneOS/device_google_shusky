@@ -168,17 +168,6 @@ $(call soong_config_set,haptics,kernel_ver,v$(subst .,_,$(TARGET_LINUX_KERNEL_VE
 ACTUATOR_MODEL := luxshare_ict_081545
 ADAPTIVE_HAPTICS_FEATURE := adaptive_haptics_v1
 
-# Increment the SVN for any official public releases
-ifdef RELEASE_SVN_HUSKY
-TARGET_SVN ?= $(RELEASE_SVN_HUSKY)
-else
-# Set this for older releases that don't use build flag
-TARGET_SVN ?= 38
-endif
-
-PRODUCT_VENDOR_PROPERTIES += \
-    ro.vendor.build.svn=$(TARGET_SVN)
-
 # Set device family property for SMR
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.build.device_family=HK3SB3AK3
