@@ -132,10 +132,6 @@ PRODUCT_SOONG_NAMESPACES += vendor/google_devices/shusky/prebuilts
 # SDK build system
 include device/google/gs-common/gps/brcm/device.mk
 
-# Location
-PRODUCT_COPY_FILES += \
-    device/google/shusky/location/gps_user.6.1.xml:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/gps.xml
-
 # Set zram size
 PRODUCT_VENDOR_PROPERTIES += \
 	vendor.zram.size=50p \
