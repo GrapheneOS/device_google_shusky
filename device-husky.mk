@@ -71,10 +71,6 @@ include device/google/gs-common/touch/stm/predump_stm20.mk
 include device/google/gs-common/touch/gti/predump_gti.mk
 include device/google/gs-common/touch/touchinspector/touchinspector.mk
 
-# Init files
-PRODUCT_COPY_FILES += \
-	device/google/shusky/conf/init.husky.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.husky.rc
-
 # Recovery files
 PRODUCT_COPY_FILES += \
         device/google/shusky/conf/init.recovery.device.rc:$(TARGET_COPY_OUT_RECOVERY)/root/init.recovery.husky.rc
